@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marching Cube Demo</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Space+Mono&display=swap');
+
+    /* 1. Remove default browser padding/margins */
+    body,
+    html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    /* 2. Force the canvas to fill the viewport */
+    canvas {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .ui-overlay {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        z-index: 10;
+        pointer-events: none;
+        color: white;
+        font-family: 'Inter', sans-serif;
+        text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .title {
+        margin: 0;
+        font-size: 3.5rem;
+        letter-spacing: -2px;
+        text-transform: uppercase;
+        background: linear-gradient(to bottom, #ffffff, #888);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+        margin: 0;
+        font-family: 'Space Mono', monospace;
+        font-size: 0.9rem;
+        letter-spacing: 4px;
+        color: rgba(255, 255, 255, 0.6);
+        text-transform: uppercase;
+    }
+</style>
+
+<body>
+    <canvas id="webgl_canvas"></canvas>
+    <div class="ui-overlay">
+        <h1 class="title">Terrain Editor</h1>
+        <p class="subtitle">using MARCHING CUBES</p>
+        <p class="subtitle">ALT + LEFT/RIGHT Click to edit terrain</p>
+        <p class="subtitle">ALT + SCROLL to modify brush size </p>
+    </div>
+    <script type="module" src="terrain_editor.js"></script>
+</body>
+
+</html>
